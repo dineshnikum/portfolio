@@ -32,13 +32,3 @@ npm install
 ```bash
 npm start
 ```
-
-The app runs at http://localhost:3000 by default.
-
-```
-
-
-
-
-
-```

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import {
     FaEnvelope,
-    FaPhone,
     FaMapMarkerAlt,
     FaGithub,
     FaLinkedin,
@@ -31,12 +30,6 @@ const Contact = () => {
             title: "Email",
             value: "dineshnikum1@gmail.com",
             link: "mailto:dineshnikum1@gmail.com",
-        },
-        {
-            icon: FaPhone,
-            title: "Phone",
-            value: "+91 7572980384",
-            link: "tel:+917572980384",
         },
         {
             icon: FaMapMarkerAlt,
