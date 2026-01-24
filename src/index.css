@@ -1,62 +1,80 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-  color: #ffffff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  min-height: 100vh;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a2e;
+    background: #1a1a2e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  border-radius: 4px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #818cf8, #a78bfa);
+    background: linear-gradient(135deg, #818cf8, #a78bfa);
 }
 
 /* Selection */
 ::selection {
-  background-color: #3b82f6;
-  color: white;
+    background-color: #3b82f6;
+    color: white;
 }
 
 /* Focus styles */
 *:focus {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
 }
 
-/* Smooth transitions */
-* {
-  transition: all 0.3s ease;
+/* Specific transitions for interactive elements */
+a,
+button,
+.btn,
+.card,
+.nav-link,
+.social-link,
+.project-card,
+.skill-card,
+.feature-card {
+    transition: all 0.3s ease;
 }

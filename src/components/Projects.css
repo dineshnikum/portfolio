@@ -42,15 +42,17 @@
   color: #a0a0a0;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   backdrop-filter: blur(10px);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .filter-btn:hover {
   background: rgba(59, 130, 246, 0.1);
   border-color: rgba(59, 130, 246, 0.3);
   color: #3b82f6;
-  transform: translateY(-2px);
+  transform: translateY(-2px) translateZ(0);
 }
 
 .filter-btn.active {
@@ -71,14 +73,16 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   backdrop-filter: blur(10px);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .project-card:hover {
   border-color: rgba(59, 130, 246, 0.3);
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
 }
 
 .project-image {

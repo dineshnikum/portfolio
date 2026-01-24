@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
     FaBars,
     FaTimes,
@@ -12,17 +12,33 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // Scroll effect
+    // Throttled scroll effect for better performance
     useEffect(() => {
+        let ticking = false;
+        
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    setIsScrolled(window.scrollY > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Navigation items
+    const handleMenuToggle = useCallback(() => {
+        setIsMenuOpen(prev => !prev);
+    }, []);
+
+    const handleMenuClose = useCallback(() => {
+        setIsMenuOpen(false);
+    }, []);
+
+    // Navigation items - memoized outside component would be better, but keeping here for now
     const navItems = [
         { name: "Home", href: "#home" },
         { name: "About", href: "#about" },
@@ -74,7 +90,7 @@ const Header = () => {
                                     <a
                                         href={item.href}
                                         className="nav-link"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={handleMenuClose}
                                     >
                                         {item.name}
                                     </a>
@@ -101,7 +117,7 @@ const Header = () => {
 
                     <button
                         className="menu-toggle"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        onClick={handleMenuToggle}
                         aria-label="Toggle menu"
                     >
                         {isMenuOpen ? <FaTimes /> : <FaBars />}

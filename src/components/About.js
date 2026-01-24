@@ -1,40 +1,39 @@
-import React from "react";
 import { useInView } from "react-intersection-observer";
 import { FaCode, FaRocket, FaUsers, FaLightbulb } from "react-icons/fa";
 import "./About.css";
+
+const features = [
+    {
+        icon: FaCode,
+        title: "Clean Code",
+        description:
+            "I write maintainable, scalable, and well-documented code following best practices and industry standards.",
+    },
+    {
+        icon: FaRocket,
+        title: "Fast Development",
+        description:
+            "Quick to learn new technologies and frameworks, delivering projects on time with high quality.",
+    },
+    {
+        icon: FaUsers,
+        title: "Team Player",
+        description:
+            "Excellent communication skills and collaborative mindset, always ready to help team members.",
+    },
+    {
+        icon: FaLightbulb,
+        title: "Problem Solver",
+        description:
+            "Strong analytical thinking and creative problem-solving abilities to tackle complex challenges.",
+    },
+];
 
 const About = () => {
     const [ref, inView] = useInView({
         threshold: 0.1,
         triggerOnce: true,
     });
-
-    const features = [
-        {
-            icon: FaCode,
-            title: "Clean Code",
-            description:
-                "I write maintainable, scalable, and well-documented code following best practices and industry standards.",
-        },
-        {
-            icon: FaRocket,
-            title: "Fast Development",
-            description:
-                "Quick to learn new technologies and frameworks, delivering projects on time with high quality.",
-        },
-        {
-            icon: FaUsers,
-            title: "Team Player",
-            description:
-                "Excellent communication skills and collaborative mindset, always ready to help team members.",
-        },
-        {
-            icon: FaLightbulb,
-            title: "Problem Solver",
-            description:
-                "Strong analytical thinking and creative problem-solving abilities to tackle complex challenges.",
-        },
-    ];
 
     return (
         <section id="about" className="about section">
@@ -81,31 +80,31 @@ const About = () => {
 
                             <div className="stats">
                                 <div
-                                    className={`stat hover-scale animate-fade-in-up animate-stagger-3 ${
+                                    className={`stat animate-fade-in-up animate-stagger-3 ${
                                         inView ? "visible" : ""
                                     }`}
                                 >
-                                    <span className="stat-number">10+</span>
+                                    <span className="stat-number">7+</span>
                                     <span className="stat-label">
                                         Projects Completed
                                     </span>
                                 </div>
                                 <div
-                                    className={`stat hover-scale animate-fade-in-up animate-stagger-4 ${
+                                    className={`stat animate-fade-in-up animate-stagger-4 ${
                                         inView ? "visible" : ""
                                     }`}
                                 >
-                                    <span className="stat-number">8+</span>
+                                    <span className="stat-number">11+</span>
                                     <span className="stat-label">
                                         Months Learning
                                     </span>
                                 </div>
                                 <div
-                                    className={`stat hover-scale animate-fade-in-up animate-stagger-5 ${
+                                    className={`stat animate-fade-in-up animate-stagger-5 ${
                                         inView ? "visible" : ""
                                     }`}
                                 >
-                                    <span className="stat-number">5+</span>
+                                    <span className="stat-number">10+</span>
                                     <span className="stat-label">
                                         Technologies
                                     </span>
@@ -117,7 +116,7 @@ const About = () => {
                             {features.map((feature, index) => (
                                 <div
                                     key={feature.title}
-                                    className={`feature-card hover-lift animate-fade-in-up animate-stagger-${
+                                    className={`feature-card animate-fade-in-up animate-stagger-${
                                         index + 3
                                     } ${inView ? "visible" : ""}`}
                                 >

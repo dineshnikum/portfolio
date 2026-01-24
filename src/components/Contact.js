@@ -9,6 +9,39 @@ import {
 } from "react-icons/fa";
 import "./Contact.css";
 
+const contactInfo = [
+    {
+        icon: FaEnvelope,
+        title: "Email",
+        value: "dineshnikum1@gmail.com",
+        link: "mailto:dineshnikum1@gmail.com",
+    },
+    {
+        icon: FaMapMarkerAlt,
+        title: "Location",
+        value: "Ahmedabad, Gujarat, India",
+        link: "#",
+    },
+];
+
+const socialLinks = [
+    {
+        icon: FaGithub,
+        href: "https://github.com/dineshnikum",
+        label: "GitHub",
+    },
+    {
+        icon: FaLinkedin,
+        href: "https://www.linkedin.com/in/dinesh-nikum-53ab142a3/",
+        label: "LinkedIn",
+    },
+    {
+        icon: FaInstagram,
+        href: "https://www.instagram.com/dinesh.nikum18/",
+        label: "Instagram",
+    },
+];
+
 const Contact = () => {
     const [ref, inView] = useInView({
         threshold: 0.1,
@@ -24,44 +57,11 @@ const Contact = () => {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const contactInfo = [
-        {
-            icon: FaEnvelope,
-            title: "Email",
-            value: "dineshnikum1@gmail.com",
-            link: "mailto:dineshnikum1@gmail.com",
-        },
-        {
-            icon: FaMapMarkerAlt,
-            title: "Location",
-            value: "Ahmedabad, Gujarat, India",
-            link: "#",
-        },
-    ];
-
-    const socialLinks = [
-        {
-            icon: FaGithub,
-            href: "https://github.com/dineshnikum",
-            label: "GitHub",
-        },
-        {
-            icon: FaLinkedin,
-            href: "https://www.linkedin.com/in/dinesh-nikum-53ab142a3/",
-            label: "LinkedIn",
-        },
-        {
-            icon: FaInstagram,
-            href: "https://www.instagram.com/dinesh.nikum18/",
-            label: "Instagram",
-        },
-    ];
-
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
+        setFormData((prev) => ({
+            ...prev,
             [e.target.name]: e.target.value,
-        });
+        }));
     };
 
     const handleSubmit = async (e) => {

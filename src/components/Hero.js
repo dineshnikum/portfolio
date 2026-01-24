@@ -57,6 +57,8 @@ const Hero = () => {
                         src="/images/profile-picture.png"
                         alt="Dinesh Nikum"
                         className="profile-image"
+                        loading="eager"
+                        decoding="async"
                         onError={(e) => {
                           e.target.style.display = "none";
                           e.target.nextSibling.style.display = "block";

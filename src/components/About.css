@@ -14,7 +14,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(
+    background:
+        radial-gradient(
             circle at 30% 20%,
             rgba(99, 102, 241, 0.06) 0%,
             transparent 50%
@@ -62,19 +63,12 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     backdrop-filter: blur(10px);
-    transition: transform 0.35s ease, border-color 0.3s ease,
+    transition:
+        border-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .stat:hover {
-    transform: scale(1.05) translateY(-5px) !important;
-    border-color: rgba(59, 130, 246, 0.3) !important;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1) !important;
-}
-
-/* More specific hover rules */
-.stat.hover-scale:hover {
-    transform: scale(1.05) translateY(-5px) !important;
     border-color: rgba(59, 130, 246, 0.3) !important;
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1) !important;
 }
@@ -112,7 +106,6 @@
 .feature-card:hover {
     background: rgba(59, 130, 246, 0.05);
     border-color: rgba(59, 130, 246, 0.3);
-    transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
 }
 
