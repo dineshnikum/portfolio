@@ -116,7 +116,8 @@ const Footer = () => {
                             reserved.
                         </p>
                         <p className="footer-note">
-                            Built with React, CSS Animations & lots of ☕
+                            Built with React, CSS Animations & lots of{" "}
+                            <FaHeart />
                         </p>
                     </div>
                 </div>
